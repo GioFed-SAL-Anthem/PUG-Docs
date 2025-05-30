@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpug=self.webpackChunkpug||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/PUG/blog","blogTitle":"Blog","authorsListPath":"/PUG/blog/authors"}')}}]);
