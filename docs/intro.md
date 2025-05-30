@@ -1,47 +1,34 @@
 ---
-sidebar_position: 1
+id: intro
+title: Introduction to PUG
 ---
 
-# Tutorial Intro
+# Welcome to PUG
 
-Let's discover **Docusaurus in less than 5 minutes**.
+!["PUG"](../static/img/pug.png)
 
-## Getting Started
+PUG is a robust server platform designed to deliver reliable and efficient backend hosting with excellent technical and operational features.
 
-Get started by **creating a new site**.
+## Key Technical Characteristics
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- **CPU:** High-performance multi-core processors to handle intensive computation.
+- **RAM:** Ample memory allocation for smooth multitasking and fast data processing.
+- **Storage:** Fast SSD storage with redundancy options for data safety.
+- **Network:** High bandwidth and low latency networking for optimal connectivity.
+- **Virtualization:** Powered by Proxmox, allowing efficient VM and container management.
+- **Scalability:** Easily scales resources up or down based on workload demands.
+- **Security:** Includes firewall configurations, regular updates, and monitoring.
 
-### What you'll need
+## Use Cases
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- **For Thesis Students:** Provides a stable environment to deploy research projects and backend services.
+- **Backend Deployment:** Supports hosting of multiple backend applications, APIs, and services seamlessly.
+- **Proxmox Integration:** Hosted on Proxmox for virtualization benefits such as snapshots, backups, and isolation.
 
-## Generate a new site
+## Additional Information
 
-Generate a new Docusaurus site using the **classic template**.
+- Supports both virtual machines and containerized applications.
+- Enables easy system snapshots and rollback via Proxmox.
+- Designed for ease of maintenance and extensibility to suit different project requirements.
 
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Explore the documentation to learn how to set up and use PUG effectively!
