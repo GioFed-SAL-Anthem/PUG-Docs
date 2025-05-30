@@ -1,41 +1,54 @@
-# Website
+# 🐾 PUG-docs
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+![PUG](./static/img/pug.png)
 
-## Installation
+[![Build](https://img.shields.io/github/actions/workflow/status/GioFed-SAL-Anthem/PUG/ci.yml?branch=main&style=for-the-badge)](https://github.com/<your-org>/<your-repo>/actions)
+[![License](https://img.shields.io/github/license/GioFed-SAL-Anthem/PUG?style=for-the-badge)](./LICENSE)
+[![Made with Docusaurus](https://img.shields.io/badge/Made%20with-Docusaurus-blue?style=for-the-badge&logo=docusaurus)](https://docusaurus.io/)
+[![Live Site](https://img.shields.io/badge/View%20Site-Online-blueviolet?style=for-the-badge)](https://<your-docs-url>)
 
-```bash
-yarn
-```
+> 🐶 **PUG-docs** — Your powerful, user-friendly documentation hub built with [Docusaurus](https://docusaurus.io/).
 
-## Local Development
+---
 
-```bash
-yarn start
-```
+## ✨ Features
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+- ⚡ **Lightning-fast** static site generator
+- 📝 Write docs using **Markdown**
+- 🎨 Fully customizable with themes & plugins
+- 🧩 Extensible with React components
+- 🚀 Ready to deploy on GitHub Pages, Vercel, Netlify & more
 
-## Build
+---
 
-```bash
-yarn build
-```
+## 📦 Local Installation
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
+Install dependencies:
 
 ```bash
-USE_SSH=true yarn deploy
+npm install
+npx docusaurus start
 ```
 
-Not using SSH:
+This starts a local development server at http://localhost:3000. Edits reflect live!
 
+## 🔧 Build
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+npm build
+```
+Builds the static site into the build/ directory. You can deploy this to any static host.
+
+## 🚀 Deployment
+```bash
+npm build
+npm run serve -- --build --port 80 --host 0.0.0.0
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## 💬 Contributing
+We welcome contributions! Please open an issue or submit a pull request to improve PUG-docs.
+
+
+## 📄 License
+Distributed under the GPL3 License.
+
+## Made with ❤️ by the PUG-docs team
