@@ -1,3 +1,8 @@
+---
+id: troubleshooting
+title: Troubleshooting
+---
+
 If you didn’t find your issue listed here or need more specific help:
 
 👉 [**Open an issue on the project repository**](https://github.com/GioFed-SAL-Anthem/PUG)

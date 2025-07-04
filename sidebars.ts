@@ -25,6 +25,7 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'create-vm',
+    'access-vm', 
     'faq',
     'troubleshooting'
   ],

@@ -1,6 +1,6 @@
 # Host Network Configuration Documentation
 
-This document explains the network configuration defined in the `/etc/network/interfaces` file for a Proxmox host.
+This document explains the network configuration defined in the `/etc/network/interfaces` file for a **Proxmox host**.
 
 ---
 
@@ -18,6 +18,13 @@ The diagram above shows:
 
 ---
 
+:::danger
+
+This section of the documentation is intended exclusively for the maintenance team. If you are not a member of the maintenance team and need to configure traffic redirection using NAT rules, please contact the maintenance team for assistance.
+
+:::
+
+
 ## File Overview
 
 The configuration manages multiple network interfaces including physical NICs (`ens3f0`, `ens3f1`, etc.) and a virtual bridge interface (`vmbr0`) used for virtual machine networking. It also includes IP forwarding and NAT setup for routing and port forwarding.
@@ -25,6 +32,12 @@ The configuration manages multiple network interfaces including physical NICs (`
 ---
 
 ## Configuration Breakdown
+
+:::note
+
+This configuration should not be modified unless there are significant changes to the network infrastructure.
+
+:::
 
 ```bash
 auto lo
@@ -117,8 +130,30 @@ post-down iptables -t nat -D PREROUTING -p tcp -i ens3f0 --dport 10099 -j DNAT -
 ```
 Forward TCP connections coming to external interface ens3f0 on port 10099 to internal IP 10.10.10.99 on port 22 (SSH).
 
+After editing the network interface configuration file, apply the changes using:
+
 ```bash
-source /etc/network/interfaces.d/*
+ifreload -a
 ```
 
-This line includes any additional network interface configurations stored in the /etc/network/interfaces.d/ directory, allowing modular network setups.
+This will reload all network interfaces and apply associated post-up and post-down commands, including iptables rules.
+
+To confirm that the NAT rule has been successfully added:
+
+```bash
+iptables -t nat -L -n -v
+```
+
+Check for a rule under the PREROUTING chain that matches the expected port and destination IP.
+
+:::danger
+
+To flush all NAT rules (this will remove all existing port forwarding and NAT rules):
+
+```bash
+sudo iptables -t nat -F
+```
+
+This action is irreversible and affects all active NAT rules. Only use this if you're certain about resetting your NAT table.
+
+:::

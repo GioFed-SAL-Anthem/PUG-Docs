@@ -15,7 +15,7 @@ Welcome to the FAQ section. Here you’ll find answers to common questions relat
 After setting up your host, navigate to:
 
 ```bash
-https://<your-proxmox-ip>:8006
+https://pug.sal.disco.unimib.it:8086
 ```
 
 Log in using the credentials you configured during installation or provided in the user configuration.
@@ -41,18 +41,6 @@ Yes. Uncomment and duplicate the example rules in the `host-config.md` file. Mod
 Example:
 ```bash
 post-up iptables -t nat -A PREROUTING -p tcp -i ens3f0 --dport 10022 -j DNAT --to 10.10.10.22:22
-```
-
-## ❓ Where are the VM disk images stored?
-By default, Proxmox stores VM images in /var/lib/vz/images/ unless a different storage location is configured.
-
-## ❓ How do I back up my VMs?
-Use the built-in backup tool from the Proxmox web interface or the vzdump command-line tool.
-
-Example:
-
-```bash
-vzdump 100 --storage local --mode snapshot
 ```
 
 ## ❓ Where can I find more help?

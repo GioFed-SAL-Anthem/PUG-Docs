@@ -1,56 +1,57 @@
 # Proxmox VE User Configuration Guide
 
-This document provides a basic example of how to configure users and permissions in Proxmox VE (Virtual Environment).
-
----
-
-## Table of Contents
-
-- [Overview](#overview)  
-- [Default Users](#default-users)  
-- [Creating a New User](#creating-a-new-user)  
-- [Assigning Permissions](#assigning-permissions)  
-- [Example User Configurations](#example-user-configurations)  
-- [Best Practices](#best-practices)  
+This document provides a basic example of how to configure users and permissions in Proxmox VE.
 
 ---
 
 ## Overview
 
-Proxmox VE manages users and roles to control access to resources such as VMs, containers, and storage.  
-Users can authenticate via:
+Proxmox VE uses a role-based access control (RBAC) system. This allows administrators to assign fine-grained permissions to users over specific objects like virtual machines, storage, and nodes.
 
-- Linux PAM  
-- Proxmox’s built-in authentication server  
-- LDAP/Active Directory  
+Proxmox VE supports the following authentication backends:
 
-This guide shows how to create a dummy user and assign basic permissions.
+- **PAM**: Linux system users 
+- **PVE**: Proxmox internal users 
 
----
+:::note
 
-## Default Users
+The **PAM** realm is reserved for the `root` user only. When logging in or creating new users, make sure to select the PVE realm to avoid authentication issues.
 
-- **root@pam**: Superuser with full administrative rights.
-- **root@pve**: Same as above but authenticated via Proxmox authentication server.
+:::
 
 ---
 
-## Creating a New User
+## Creating a New User via the Web GUI
 
-You can create a new user via the Proxmox Web GUI or using the CLI.
-
-### Using Web GUI
-
-1. Log in as `root@pam`.
-2. Go to **Datacenter > Permissions > Users**.
+1. Log in with your account.
+2. Navigate to **Datacenter > Permissions > Users**.
 3. Click **Add**.
-4. Enter:
-   - **User ID**: e.g., `dummyuser@pve`
+4. Fill in the user details:
+   - **Username**: e.g., `m.rossi`
    - **Password**: Choose a secure password
-   - **Groups**: Optional groups for role assignments
-5. Click **Add**.
+   - **Groups**: (Optional) Assign the user to groups for role management
+5. Click **Add** to create the user.
 
-### Using CLI
+:::note
 
-```bash
-pveum useradd dummyuser@pve -password secretpassword
+For the **Group** selection, choose `admin` if you're creating an administrative user. Otherwise, select `students` for standard student accounts.
+
+:::
+
+## Assigning Permissions to a User
+
+After creating the user, you need to assign appropriate permissions to control their access:
+
+1. Go to **Datacenter > Permissions**.
+2. Click **Add** and select **User Permission**.
+3. In the dialog:
+   - **Path**: Select the scope of the permission (e.g., `/vms/` for virtual machines, or `/` for the entire datacenter).
+   - **User**: Choose the user you just created (e.g., `m.rossi@pve`).
+   - **Role**: Select the role that fits the user's needs (e.g., `PVEVMUser` for VM management, `Administrator` for full access).
+4. Click **Add** to apply the permission.
+
+:::tip
+
+Assign the least privilege necessary by choosing roles that only grant the permissions the user requires.
+
+:::
