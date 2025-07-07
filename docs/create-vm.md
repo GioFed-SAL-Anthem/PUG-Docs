@@ -93,7 +93,7 @@ If you prefer to use a container:
 4. Configure:
    - **Disk size**
    - **CPU & memory**
-   - **Network**
+   - **Network** 
 5. Click **Finish** to create the container.
 
 ---
@@ -113,8 +113,11 @@ If you prefer to use a container:
 - For **VMs**, choose the **virtio** model for better performance.
 - For **containers**, you can configure the IP manually or use DHCP.
 
-> ⚠️ **Important:**  
-> When assigning a static IP, make sure **not to reuse an IP already in use** on the network. If you're unsure, it's safer to select **DHCP** to let your router assign an available address automatically.
+:::tip
+
+When assigning a static IP, make sure **not to reuse an IP already in use** on the network. If you're unsure, it's safer to select **DHCP** to let your router assign an available address automatically.
+
+:::
 
 ## References
 

@@ -23,6 +23,14 @@ The **PAM** realm is reserved for the `root` user only. When logging in or creat
 
 ## Creating a New User via the Web GUI
 
+:::tip
+
+When creating a new user, the suggested username is a combination of the user's first initial and their surname (e.g., j.doe).
+
+The default password is set by appending "sal.pug" to the suggested username (e.g., j.doe.sal.pug).
+
+:::
+
 1. Log in with your account.
 2. Navigate to **Datacenter > Permissions > Users**.
 3. Click **Add**.
